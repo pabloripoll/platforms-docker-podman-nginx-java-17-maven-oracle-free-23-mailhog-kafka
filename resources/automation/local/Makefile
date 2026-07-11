@@ -253,7 +253,7 @@ mailer-destroy: ## destroys completly the mailer container
 	fi
 
 # -------------------------------------------------------------------------------------------------
-#  Broker & its client settings
+#  Broker & Client
 # -------------------------------------------------------------------------------------------------
 .PHONY: broker-host-check broker-set
 
@@ -263,9 +263,8 @@ broker-host-check: ## shows container service requirements status on local machi
 broker-set: ## sets the database and client enviroment file to build both container
 	cd platforms/$(BROKER_PLTF) && $(MAKE) env-set
 
-# -------------------------------------------------------------------------------------------------
-#  Broker Service
-# -------------------------------------------------------------------------------------------------
+# --- #
+
 .PHONY: broker-info broker-build broker-create broker-ssh broker-start broker-stop broker-destroy
 
 broker-info: ## shows docker related information
@@ -310,9 +309,8 @@ broker-destroy: ## destroys completly the database container with its data
 		fi \
 	fi
 
-# -------------------------------------------------------------------------------------------------
-#  Broker Client Service
-# -------------------------------------------------------------------------------------------------
+# --- #
+
 .PHONY: broker-client-info broker-client-build broker-client-create broker-client-ssh broker-client-start broker-client-stop broker-client-destroy
 
 broker-client-info: ## shows docker related information

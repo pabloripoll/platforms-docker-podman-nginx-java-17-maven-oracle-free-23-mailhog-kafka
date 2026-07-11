@@ -148,20 +148,37 @@ $ make help
 Usage: $ make [target]
 Targets:
 $ make help                           shows this Makefile help message
-$ make port-check                     shows this project port availability on local machine
+$ make ports-check                    shows this project ports availability on local machine
 $ make env                            checks if docker .env file exists
 $ make env-set                        sets docker .env file
+# -------------------------------------------------------------------------------------------------
+#  Kafka
+# -------------------------------------------------------------------------------------------------
 $ make info                           shows container information
 $ make ssh                            enters the container shell
 $ make up                             starts and recreates containers if compose config or image changed, runnning in detached mode
 $ make build                          builds and ensures changes in the Dockerfile, build steps, or copied-in files are applied. Not --no-recreate
 $ make network                        starts up into an existing custom network for container-to-container communication, runnning in detached mode
-$ make start                          starts the container and put on running from latest configuration
-$ make stop                           stops the running container but data won't be destroyed
+$ make start                          starts the container and put on running
+$ make stop                           stops the running container but data will not be destroyed
 $ make restart                        restarts the running container
 $ make clear                          removes container from Docker running containers
 $ make destroy                        delete container image from Docker cache
 $ make dev                            sets a development enviroment
+# -------------------------------------------------------------------------------------------------
+#  Kafka Client
+# -------------------------------------------------------------------------------------------------
+$ make info-client                    shows client container information
+$ make ssh-client                     enters the client container shell
+$ make up-client                      starts and recreates client containers if compose config or image changed, runnning in detached mode
+$ make build-client                   builds and ensures changes in the Dockerfile, build steps, or copied-in files are applied. Not --no-recreate
+$ make network-client                 starts up into an existing custom network for container-to-container communication, runnning in detached mode
+$ make start-client                   starts the client container and put on running
+$ make stop-client                    stops the running client container but data will not be destroyed
+$ make restart-client                 restarts the running client container
+$ make clear-client                   removes client container from Docker running containers
+$ make destroy-client                 delete client container image from Docker images cache
+$ make dev-client                     sets a development enviroment
 ```
 <br><br>
 
